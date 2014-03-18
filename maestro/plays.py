@@ -259,21 +259,21 @@ class Start(BaseOrchestrationPlay):
         o.pending('checking service...')
         status = container.status(refresh=True)
 
-        if container.ping(retries=2):
-            # If the container pinged, but has no status, it's likely that
-            # something else that is not our container is listening on that
-            # part. This could indicate that the environment description
-            # doesn't match what is running, or supposed to be running, on the
-            # target host.
-            if not status:
-                raise exceptions.OrchestrationException(
-                    'Invalid state, other service found running in place of ' +
-                    'container {}.!'.format(container))
-
-            o.commit('\033[34;0m{:<15s}\033[;0m'.format(container.id[:7]))
-            # We use None as a special marker showing the container and the
-            # application were already running.
-            return None
+#        if container.ping(retries=2):
+#            # If the container pinged, but has no status, it's likely that
+#            # something else that is not our container is listening on that
+#            # part. This could indicate that the environment description
+#            # doesn't match what is running, or supposed to be running, on the
+#            # target host.
+#            if not status:
+#                raise exceptions.OrchestrationException(
+#                    'Invalid state, other service found running in place of ' +
+#                    'container {}.!'.format(container))
+#
+#            o.commit('\033[34;0m{:<15s}\033[;0m'.format(container.id[:7]))
+#            # We use None as a special marker showing the container and the
+#            # application were already running.
+#            return None
 
         # Otherwise we need to start it.
         if container.id:
