@@ -1,3 +1,5 @@
+Modified version of signalfuse/maestro-ng which can run inside a VM with forwarded ports
+
 MaestroNG, an orchestrator of Docker-based deployments
 ======================================================
 
@@ -580,3 +582,7 @@ you can look at the following repositories:
 - http://github.com/signalfuse/docker-zookeeper  
   A ZooKeeper image, automatically creating a cluster with the other
   instances in the same environment.
+=======
+maestro-ng
+==========
+
